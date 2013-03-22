@@ -9,8 +9,15 @@
   (html [:table
          [:tr
             [:th (nth (nth l 0) 0)]
-            [:th (nth (nth l 1) 0)]]
+            [:th (nth (nth l 1) 0)]
+          
+          ]
           ]))
+
+(defn tr-gen [l]
+  [:tr [:th (nth (nth l 0) 0)] [:th (nth (nth l 1) 0)]
+  ]
+          
 
 (defn body []
   (html [:body (str (table-render profile))])) 
