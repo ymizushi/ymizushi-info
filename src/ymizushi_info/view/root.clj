@@ -1,8 +1,19 @@
 (ns ymizushi-info.view.root
   (:use hiccup.core))
 
-(defn contents []
-  (html [:html (str (head) (body) )])) 
+(def profile [
+  ["趣味" "プログラミング" "ジャグリング" "音楽制作"]
+  ["興味" "世の中の仕組みに興味があります"]])
+
+(defn table-render [l]
+  (html [:table
+         [:tr
+            [:th (nth (nth l 0) 0)]
+            [:th (nth (nth l 1) 0)]]
+          ]))
+
+(defn body []
+  (html [:body (str (table-render profile))])) 
 
 (defn head []
   (html [:head
@@ -13,8 +24,8 @@
          [:title "ymizushi.info"]
          ])) 
 
-(defn body []
-  (html [:body "body"])) 
+(defn contents []
+  (html [:html (str (head) (body) )])) 
 
 (defn index [x]
   (contents))
