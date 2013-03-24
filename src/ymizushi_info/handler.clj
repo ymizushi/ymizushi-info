@@ -3,7 +3,8 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [ymizushi-info.controller.root :as root]
-            ))
+            [ring.middleware reload stacktrace]
+            [ring.adapter.jetty :only [run-jetty]]))
 
 (defroutes app-routes
   (GET "/" [id] (root/action id))
