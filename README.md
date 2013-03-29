@@ -1,14 +1,12 @@
-# ymizushi-www
-The website for about ymizushi.
+# ymizushi-info
+The website project for about ymizushi.
 http://www.ymizushi.info
 
 ## Usage
-lein ring server
-
-FIXME
+$ lein ring server
 
 ## License
 
-Copyright © 2013 FIXME
+Copyright © 2013 ymizushi
 
 Distributed under the Eclipse Public License, the same as Clojure.
