@@ -1,34 +1,15 @@
 (ns ymizushi-info.view.root
   (:use hiccup.core))
 
-(def contents [
-  ["satisfies?" "プログラミング" "ジャグリング" "音楽制作"]
-  ["興味" "世の中の仕組みに興味があります"]])
-
-(def profile [
-  [:hobby ["趣味" "プログラミング" "ジャグリング" "音楽制作"]]
-  [:interests ["興味" "世の中の仕組みに興味があります"]]
-  ;[:age (
-  ;       (.get (.getInstance Calendar)
-  ;       (. (.getInstance Calendar) (. YEAR Calendar))
-  ;             
-  ;             
-  ;             
-  ;             ) ]
-  ;           ; Calendar now = Calendar.getInstance().get(Calendar.YEAR);
-  ;          (.getInstance now Calendar)
-  ;            
-  ;            ])
-
-(defn table-render [ll]
+(defn table-render [m]
   (html
     [:table
-      (for [l ll] 
+      (for [l (vals m)] 
         [:tr (for [e l]
           [:td  e])])]))
 
-(defn body []
-  (html [:body (str (table-render profile))])) 
+(defn body [params]
+  (html [:body (str (table-render (:profile params)))])) 
 
 (defn head []
   (html [:head
@@ -39,8 +20,8 @@
          [:title "ymizushi.info"]
          ])) 
 
-(defn contents []
-  (html [:html (str (head) (body) )])) 
+(defn contents [params]
+  (html [:html (str (head) (body params) )])) 
 
-(defn index [x]
-  (contents))
+(defn index [params]
+  (contents params))
