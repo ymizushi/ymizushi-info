@@ -1,5 +1,5 @@
-(ns ymizushi-info.view.root
-  (:use hiccup.core))
+(ns ymizushi-info.view.profile
+  (:use [hiccup.core]))
 
 (defn table-render [m]
   (html
@@ -17,7 +17,9 @@
           [:a {:href "/"} "info"] [:br]
           [:a {:href "/profile"} "profile"] [:br]
           [:a {:href "history"} "history"] [:br]
-          [:a {:href "downloads"} "downloads"] [:br]]]]
+          [:a {:href "downloads"} "downloads"] [:br]]
+        [:td
+          (str (table-render(:profile params)))]]]
       [:p "powered by clojure/compojure"] [:br] ])) 
 
 (defn head []
@@ -33,3 +35,8 @@
 
 (defn index [params]
   (contents params))
+
+(defn sp-body [params]
+  (html [:body
+    (str (table-render(:profile params)))
+         ])) 
