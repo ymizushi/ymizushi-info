@@ -3,7 +3,8 @@
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [compojure "1.1.5"]
-                 [hiccup "1.0.2"]]
+                 [hiccup "1.0.2"]
+                 [mongoika "0.7.7"]]
   :plugins [[lein-ring "0.8.2"]]
   :ring {:handler ymizushi-info.handler/app}
   :dev-dependencies [[ring/ring-devel "0.3.11"]]
