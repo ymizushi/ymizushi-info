@@ -1,35 +1,16 @@
 (ns ymizushi-info.view.root
-  (:use hiccup.core))
+  (:use
+    [hiccup.core]
+    [ymizushi-info.view.common]))
 
-(defn table-render [m]
-  (html
-    [:table
-      (for [l (vals m)] 
-        [:tr (for [e l]
-          [:td  e])])]))
-
-(defn common-body [params]
-  (html
-    [:body
-      [:table [:tr
-        [:td 
-          [:h1  "ymizushi.info"]
-          [:a {:href "/"} "info"] [:br]
-          [:a {:href "/profile"} "profile"] [:br]
-          [:a {:href "history"} "history"] [:br]
-          [:a {:href "downloads"} "downloads"] [:br]]]]
-      [:p "powered by clojure/compojure"] [:br] ])) 
-
-(defn head []
-  (html [:head
-    [:meta {:http-equiv "Content-Type" :content "text/html" :charset "shift_jis"}]
-    [:meta {:name "author" :content "ymizushi"}]
-    [:meta {:name "description" :content "clojure"}]
-    [:meta {:name "robots" :content "all"}]
-    [:title "ymizushi.info"]]))
+(defn sp-body [params]
+  (list)) 
 
 (defn contents [params]
-  (html [:html (str (head) (common-body params) )])) 
+  (list (common-body (sp-body params))))
+
+(defn body [params]
+  [:body (contents params)])
 
 (defn index [params]
-  (contents params))
+  (html [:html (list (head) (body params) )]))
