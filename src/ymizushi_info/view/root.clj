@@ -6,11 +6,5 @@
 (defn sp-body [params]
   (list)) 
 
-(defn contents [params]
-  (list (common-body (sp-body params))))
-
-(defn body [params]
-  [:body (contents params)])
-
 (defn index [params]
-  (html [:html (list (head) (body params) )]))
+  (html [:html (list (head) [:body (common-body (sp-body params))])]))

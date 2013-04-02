@@ -23,7 +23,8 @@
       [:tr
         [:td (left-body)]
         [:td right-body]]]
-    [:p "powered by clojure/compojure"] [:br]) ) 
+    [:p "powered by clojure/compojure"] [:br])) 
+
 
 (defn table-render [m]
   [:table
