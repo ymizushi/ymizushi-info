@@ -7,3 +7,4 @@ pom.xml
 /target
 .lein-plugins/
 .DS_Store
+.lein-failures
