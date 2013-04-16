@@ -10,6 +10,7 @@
             [ring.adapter.jetty :only [run-jetty]]))
 
 (defroutes app-routes
+  (route/resources "/")
   (GET "/" [id] (root/action id))
   (GET "/profile" [id] (profile/action id))
   (GET "/history" [id] (history/action id))
