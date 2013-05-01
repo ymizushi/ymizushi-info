@@ -17,5 +17,5 @@
   (GET "/downloads" [id] (downloads/action id))
   (route/not-found "Not Found"))
 
-(def app
+(def -main
   (handler/site app-routes))
