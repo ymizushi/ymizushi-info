@@ -1,17 +1,17 @@
 ymizushi-info
 ================================
 
-http://www.ymizushi.info
-The website about ymizushi powered by clojure/compojure.
+http://ymizushi-info.herokuapp.com/
+The website about ymizushi using clojure/compojure.
 
 ## Purpose
-Making public about ymizushi.
+Making famous with ymizushi.
 
 ## Requirements
 - clojure 1.4 or later.
 - compojure 1.1 or later.
 - hiccup 1.0 or later.
-These requirements is automatically installed by leiningen.
+These requirements are automatically installed by leiningen.
 
 ## Install
 1. Mac OS X
@@ -24,7 +24,7 @@ $brew install leiningen
 ## Usage
 
  ```sh
-$ lein ring server
+$ lein run -m ymizushi-info.web
 ```
 
 ## start slime server
