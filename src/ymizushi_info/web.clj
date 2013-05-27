@@ -8,6 +8,11 @@
             [ring.middleware.session.cookie :as cookie]
             [ring.adapter.jetty :as jetty]
             [ring.middleware.basic-authentication :as basic]
+            [ymizushi-info.controller.root :as root]
+            [ymizushi-info.controller.profile :as profile]
+            [ymizushi-info.controller.history :as history]
+            [ymizushi-info.controller.downloads :as downloads]
+
             [cemerick.drawbridge :as drawbridge]
             [environ.core :refer [env]]))
 
@@ -23,10 +28,17 @@
 (defroutes app
   (ANY "/repl" {:as req}
        (drawbridge req))
-  (GET "/" []
-       {:status 200
-        :headers {"Content-Type" "text/plain"}
-        :body (pr-str ["Hello" :from 'Heroku])})
+  ;(GET "/" []
+  ;     {:status 200
+  ;      :headers {"Content-Type" "text/plain"}
+  ;      :body (pr-str ["Hello" :from 'Heroku])})
+
+  (GET "/" [id] (root/action id))
+  (GET "/profile" [id] (profile/action id))
+  (GET "/history" [id] (history/action id))
+  (GET "/downloads" [id] (downloads/action id))
+  
+  
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
