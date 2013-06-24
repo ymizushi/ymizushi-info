@@ -37,6 +37,7 @@
   (GET "/profile" [id] (profile/action id))
   (GET "/history" [id] (history/action id))
   (GET "/downloads" [id] (downloads/action id))
+  (route/resources "/")
   
   
   (ANY "*" []
