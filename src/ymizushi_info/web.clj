@@ -12,6 +12,7 @@
             [ymizushi-info.controller.profile :as profile]
             [ymizushi-info.controller.history :as history]
             [ymizushi-info.controller.downloads :as downloads]
+            [ymizushi-info.controller.blog :as blog]
 
             [cemerick.drawbridge :as drawbridge]
             [environ.core :refer [env]]))
@@ -26,17 +27,12 @@
       (basic/wrap-basic-authentication authenticated?)))
 
 (defroutes app
-  (ANY "/repl" {:as req}
-       (drawbridge req))
-  ;(GET "/" []
-  ;     {:status 200
-  ;      :headers {"Content-Type" "text/plain"}
-  ;      :body (pr-str ["Hello" :from 'Heroku])})
-
+  (ANY "/repl" {:as req} (drawbridge req))
   (GET "/" [id] (root/action id))
   (GET "/profile" [id] (profile/action id))
   (GET "/history" [id] (history/action id))
   (GET "/downloads" [id] (downloads/action id))
+  (GET "/blog" [id] (blog/action id))
   (route/resources "/")
   
   
