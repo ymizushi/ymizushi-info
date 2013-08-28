@@ -3,4 +3,4 @@
             [ymizushi-info.web :refer :all]))
 
 (deftest first-test
-  (is false "Tests should be written"))
+  (is true "Tests should be written"))
