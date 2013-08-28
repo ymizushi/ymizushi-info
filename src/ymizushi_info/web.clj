@@ -53,7 +53,7 @@
             :body (slurp (io/resource "500.html"))}))))
 
 (defn -main [& [port]]
-  (let [port (Integer. (or port (env :port) 5000))
+  (let [port (Integer. (or port (env :port) 80))
         ;; TODO: heroku config:add SESSION_SECRET=$RANDOM_16_CHARS
         store (cookie/cookie-store {:key (env :session-secret)})]
     (jetty/run-jetty (-> #'app
