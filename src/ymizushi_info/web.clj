@@ -14,7 +14,8 @@
             [ymizushi-info.controller.downloads :as downloads]
 
             [cemerick.drawbridge :as drawbridge]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]])
+  (:gen-class))
 
 (defn- authenticated? [user pass]
   ;; TODO: heroku config:add REPL_USER=[...] REPL_PASSWORD=[...]
