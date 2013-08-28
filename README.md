@@ -1,7 +1,10 @@
 ymizushi-info
 ================================
 
+[![Build Status](https://travis-ci.org/ymizushi/ymizushi-info.png?branch=master)](https://travis-ci.org/ymizushi/ymizushi-info)
+
 http://ymizushi-info.herokuapp.com/
+
 The website about ymizushi using clojure/compojure.
 
 ## Purpose
