@@ -29,11 +29,6 @@
 (defroutes app
   (ANY "/repl" {:as req}
        (drawbridge req))
-  ;(GET "/" []
-  ;     {:status 200
-  ;      :headers {"Content-Type" "text/plain"}
-  ;      :body (pr-str ["Hello" :from 'Heroku])})
-
   (GET "/" [id] (root/action id))
   (GET "/profile" [id] (profile/action id))
   (GET "/history" [id] (history/action id))
