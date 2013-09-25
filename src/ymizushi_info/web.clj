@@ -12,13 +12,11 @@
             [ymizushi-info.controller.profile :as profile]
             [ymizushi-info.controller.history :as history]
             [ymizushi-info.controller.downloads :as downloads]
-
             [cemerick.drawbridge :as drawbridge]
             [environ.core :refer [env]])
   (:gen-class))
 
 (defn- authenticated? [user pass]
-  ;; TODO: heroku config:add REPL_USER=[...] REPL_PASSWORD=[...]
   (= [user pass] [(env :repl-user false) (env :repl-password false)]))
 
 (def ^:private drawbridge
@@ -27,29 +25,24 @@
       (basic/wrap-basic-authentication authenticated?)))
 
 (defroutes app
-  (ANY "/repl" {:as req}
-       (drawbridge req))
+  (route/resources "/")
+  (ANY "/repl" {:as req} (drawbridge req))
   (GET "/" [id] (root/action id))
   (GET "/profile" [id] (profile/action id))
   (GET "/history" [id] (history/action id))
   (GET "/downloads" [id] (downloads/action id))
-  (route/resources "/")
-  
-  
-  (ANY "*" []
-       (route/not-found (slurp (io/resource "404.html")))))
+  (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))))
 
 (defn wrap-error-page [handler]
   (fn [req]
     (try (handler req)
          (catch Exception e
-           {:status 500
-            :headers {"Content-Type" "text/html"}
-            :body (slurp (io/resource "500.html"))}))))
+      {:status 500
+       :headers {"Content-Type" "text/html"}
+       :body (slurp (io/resource "500.html"))}))))
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 80))
-        ;; TODO: heroku config:add SESSION_SECRET=$RANDOM_16_CHARS
         store (cookie/cookie-store {:key (env :session-secret)})]
     (jetty/run-jetty (-> #'app
                          ((if (env :production)
@@ -57,7 +50,3 @@
                             trace/wrap-stacktrace))
                          (site {:session {:store store}}))
                      {:port port :join? false})))
-
-;; For interactive development:
-;; (.stop server)
-;; (def server (-main))

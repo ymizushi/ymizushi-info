@@ -3,7 +3,7 @@ ymizushi-info
 
 [![Build Status](https://travis-ci.org/ymizushi/ymizushi-info.png?branch=master)](https://travis-ci.org/ymizushi/ymizushi-info)
 
-http://ymizushi-info.herokuapp.com/
+http://ymizushi.info
 
 The website about ymizushi using clojure/compojure.
 
