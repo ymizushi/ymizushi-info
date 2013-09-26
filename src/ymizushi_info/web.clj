@@ -31,6 +31,7 @@
   (GET "/profile" [id] (profile/action id))
   (GET "/history" [id] (history/action id))
   (GET "/downloads" [id] (downloads/action id))
+  (POST "fook/github" {params :params} (fook/add params))
   (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))))
 
 (defn wrap-error-page [handler]
