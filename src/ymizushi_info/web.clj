@@ -50,3 +50,5 @@
                             trace/wrap-stacktrace))
                          (site {:session {:store store}}))
                      {:port port :join? false})))
+(def ring-start 
+  (site app))
