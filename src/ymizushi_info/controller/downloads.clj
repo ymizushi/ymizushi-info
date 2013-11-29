@@ -1,6 +1,6 @@
 (ns ymizushi-info.controller.downloads
    (:use
-     [ymizushi-info.model.profile :only (ymizushi)]
+     [ymizushi-info.model.profile :refer (ymizushi)]
      [ymizushi-info.view.downloads :only (index)]
      ))
 

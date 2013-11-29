@@ -1,8 +1,8 @@
-(defproject ymizushi-info "1.0.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://ymizushi-info.herokuapp.com"
-  :license {:name "FIXME: choose"
-            :url "http://example.com/FIXME"}
+(defproject ymizushi-info "1.0.0"
+  :description "The websitte about ymizushi."
+  :url "http://ymizushi.info"
+  :license {:name "Yuta Mizushima"
+            :url "http://ymizushi.info"}
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [compojure "1.1.1"]
                  [ring/ring-jetty-adapter "1.1.0"]

@@ -11,7 +11,6 @@
             [ymizushi-info.controller.profile :as profile]
             [ymizushi-info.controller.history :as history]
             [ymizushi-info.controller.downloads :as downloads]
-            [ymizushi-info.domain.blog :as blog]
             [environ.core :refer [env]])
   (:gen-class))
 
@@ -23,40 +22,16 @@
        :headers {"Content-Type" "text/html"}
        :body (slurp (io/resource "500.html"))}))))
 
-(defroutes blog-routes
-  (GET "/entry/:year/:month/:day/:time"
-    [year month day time]
-      (blog/gets
-        {:year year :month month :day day :time time}))
-  ;(PUT "/entry/:year/:month/:day/:time"
-  ;  {:year year :month month :day day :time time :params params}
-  ;    (blog/edit
-  ;      {:year year :month month :day day :time time :params params}))
-  ;(DELETE "/entry/:year/:month/:day/:time"
-  ;  {:year year :month month :day day :time time :params params}
-  ;    (blog/delete
-  ;      {:year year :month month :day day :time time :params params}))
-  ;(POST "/entry"
-  ;  {:params params}
-  ;    (blog/create
-  ;      {:params params}))
-  ;(GET "/entry"
-  ;  {:params params}
-  ;    (blog/lis
-  ;      {:params params}))
-  )
-
 (defroutes app
   (route/resources "/")
   (GET "/" [id] (root/action id))
   (GET "/profile" [id] (profile/action id))
-  ;(context "/blog" [] blog-routes)
   (GET "/history" [id] (history/action id))
   (GET "/downloads" [id] (downloads/action id))
   (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))))
 
 (defn -main [& [port]]
-  (let [port (Integer. (or port (env :port) 80))
+  (let [port (Integer. (or port (env :port) 8080))
         store (cookie/cookie-store {:key (env :session-secret)})]
     (jetty/run-jetty (-> #'app
                          ((if (env :production)
