@@ -22,13 +22,6 @@
        :headers {"Content-Type" "text/html"}
        :body (slurp (io/resource "500.html"))}))))
 
-(defroutes app
-  (route/resources "/")
-  (GET "/" [id] (root/action id))
-  (GET "/profile" [id] (profile/action id))
-  (GET "/history" [id] (history/action id))
-  (GET "/downloads" [id] (downloads/action id))
-  (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))))
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 8080))
