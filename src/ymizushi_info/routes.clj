@@ -11,5 +11,4 @@
   (GET "/profile" [params] (control {:view `ymizushi-info.view.profile/index} params))
   (GET "/history" [params] (control {:view `ymizushi-info.view.history/index} params))
   (GET "/downloads" [params] (control {:view `ymizushi-info.view.downloads/index} params))
-  (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))) 
-  )
+  (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))))
