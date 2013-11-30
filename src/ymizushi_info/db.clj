@@ -3,7 +3,6 @@
             [compojure.route :as route]
             [ymizushi-info.controller :refer [control]]
             [clojure.java.io :as io]
-            [clojure.java.io :as io]
             [ymizushi-info.renderer :refer [render]]
             [ymizushi-info.config :as config]
             [korma.db :refer [defdb postgres]]

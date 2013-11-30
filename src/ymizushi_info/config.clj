@@ -8,11 +8,12 @@
   (or (env :session-secret) session-secret))
 
 (def db-url
-  (if-let [host (:host env)
-           port (:port env)
-           db (:db env)]
-    (str "postgresql://" host ":" port "/" db)
-    (str "postgresql://" "localhost" ":" "5432" "/" "minosound")))
+  (let [host (:host env)
+        port (:port env)
+        db (:db env)]
+    (if (and host port db)
+      (str "postgresql://" host ":" port "/" db)
+      (str "postgresql://" "localhost" ":" "5432" "/" "ymizushi"))))
 
 (def db
   (let [db (env :db)

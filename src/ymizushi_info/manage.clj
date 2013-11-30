@@ -22,7 +22,7 @@
     [:created_at :timestamp "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"]))
 
 (defn create-tags []
-  (sql/create-table :tag-join
+  (sql/create-table :tags
     [:id :serial "PRIMARY KEY"]
     [:name :varchar "NOT NULL"] ;index張る
     [:blog_id :varchar "NOT NULL"]
