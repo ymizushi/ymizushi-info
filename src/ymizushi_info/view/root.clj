@@ -10,6 +10,7 @@
         [:a {:href "http://github.com/ymizushi"} "github.com/ymizushi"] [:br]
         [:a {:href "http://facebook.com/ymizush"} "Facebook"] [:br]
         [:a {:href "http://twitter.com/ymizushi"} "Twitter"] [:br]
+        [:p (:created_at params) (:min_time params)] [:br]
         [:a {:href "http://ymizushi.hateblo.jp"} "hateblo.jp"] [:br])) 
 
 (defn index [params]

@@ -9,7 +9,10 @@
                  [ring/ring-devel "1.1.0"]
                  [ring-basic-authentication "1.0.1"]
                  [environ "0.2.1"]
-                 [com.cemerick/drawbridge "0.0.6"]]
+                 [korma "0.3.0-RC5"]
+                 [org.postgresql/postgresql "9.2-1002-jdbc4"]
+                 [com.cemerick/drawbridge "0.0.6"]
+                 [com.taoensso/carmine "2.4.0"]]
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.2.1"] [lein-ring "0.8.7"]]
   :hooks [environ.leiningen.hooks]
