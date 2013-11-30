@@ -1,13 +1,15 @@
-(ns ymizushi-info.web
+(ns ymizushi-info.routes
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.route :as route]
-            [ymizushi-info.handler :refer [handle]]
-            [environ.core :refer [env]]))
+            [ymizushi-info.controller :refer [control]]
+            [clojure.java.io :as io]
+            [ymizushi-info.renderer :refer [render]]))
 
 (defroutes app
   (route/resources "/")
-  (GET "/" [id] (root/action id))
-  (GET "/profile" [id] (handle :profile (fn [] nil)))
-  (GET "/history" [id] (handle :history))
-  (GET "/downloads" [id] (downloads/action id))
-  (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))))
+  (GET "/" [params] (control {:view `ymizushi-info.view.root/index} params))
+  (GET "/profile" [params] (control {:view `ymizushi-info.view.profile/index} params))
+  (GET "/history" [params] (control {:view `ymizushi-info.view.history/index} params))
+  (GET "/downloads" [params] (control {:view `ymizushi-info.view.downloads/index} params))
+  (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))) 
+  )
