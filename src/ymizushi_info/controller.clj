@@ -1,8 +1,6 @@
 (ns ymizushi-info.controller
-  (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
-            [ymizushi-info.renderer :refer [render]]
-            [environ.core :refer [env]]))
+  (:require [ymizushi-info.db :refer [sel ins]]
+            [ymizushi-info.controller.blog]))
 
-(defn control [dest param]
-  (if-let [view (:view dest)]
-    (render view param)))
+(defn control [controller param]
+  (eval (list controller param)))

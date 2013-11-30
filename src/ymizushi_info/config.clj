@@ -21,4 +21,4 @@
         password (env :password)]
     (if (and db user password)
       {:db db :user user :password password}
-      {:db "minosound" :user "ymizushi" :password ""})))
+      {:db "ymizushi" :user "ymizushi" :password ""})))

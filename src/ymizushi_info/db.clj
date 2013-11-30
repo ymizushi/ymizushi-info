@@ -1,17 +1,18 @@
 (ns ymizushi-info.db
-  (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY context]]
-            [compojure.route :as route]
-            [ymizushi-info.controller :refer [control]]
-            [clojure.java.io :as io]
-            [ymizushi-info.renderer :refer [render]]
-            [ymizushi-info.config :as config]
+  (:require [ymizushi-info.config :as config]
             [korma.db :refer [defdb postgres]]
-            [korma.core :refer [defentity select]]))
+            [korma.core :refer [defentity select insert values]]))
 
 (defdb db
   (postgres config/db))
 
-(defentity users)
+(defentity admin_users)
+(defentity comments)
+(defentity tags)
+(defentity blogs)
 
 (defn sel [symbol]
   (select symbol))
+
+(defn ins [table values-dict]
+  (insert table (values values-dict)))
