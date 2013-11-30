@@ -1,5 +1,7 @@
 language: clojure
 lein: lein2
+env:
+  - session_secret=abcde
 script: lein2 test
 jdk:
   - openjdk7

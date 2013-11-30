@@ -32,8 +32,8 @@
               (left-body)]]]]
     [:div {:class "container"}
       right-body
-      [:p "powered by clojure/compojure"]]
-      [:br])) 
+      [:center [:b "powered by clojure"]]]
+      [:center [:b "2013 ymizushi"]])) 
 
 
 (defn table-render [m]
