@@ -17,10 +17,8 @@
   (list
     [:ul {:class "nav"}
       [:li [:a {:href "/"} "info"]]
-      [:li [:a {:href "/profile"} "profile"]]
-      [:li [:a {:href "history"} "history"]]
-      [:li [:a {:href "downloads"} "downloads"]]
-      [:li [:a {:href "history"} "history"]]]))
+      [:li [:a {:href "/blog"} "blog"]]
+      [:li [:a {:href "/profile"} "profile"]]]))
 
 (defn common-body [right-body]
   (list
