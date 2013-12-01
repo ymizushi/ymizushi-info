@@ -1,9 +1,6 @@
 (ns ymizushi-info.controller.blog
-  (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
-            [ymizushi-info.db :refer [sel ins]]
-            [ymizushi-info.view.blog]
-            [ymizushi-info.renderer :refer [render]]
-            ))
+  (:require [ymizushi-info.db :refer [sel ins]]
+            [ymizushi-info.renderer :refer [render]]))
 
 (defn get-blogs []
     ;(ins "blogs" {:title "hoge" :description "hogehoge"})

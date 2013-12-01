@@ -1,6 +1,7 @@
 (ns ymizushi-info.controller
   (:require [ymizushi-info.db :refer [sel ins]]
-            [ymizushi-info.controller.blog]))
+            [ymizushi-info.controller.blog]
+            [ymizushi-info.controller.signup]))
 
 (defn control [action param]
   (eval

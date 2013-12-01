@@ -12,4 +12,6 @@
   (GET "/history" [params] (render `history/index params))
   (GET "/downloads" [params] (render `downloads/index params))
   (GET "/blog" [params] (control `blog/index params))
+  (GET "/signup" [params] (control `signup/index params))
+  (POST "/signup" {params :params} (control `signup/post params))
   (ANY "*" [] (route/not-found (slurp (io/resource "404.html")))))

@@ -18,7 +18,8 @@
     [:ul {:class "nav"}
       [:li [:a {:href "/"} "info"]]
       [:li [:a {:href "/blog"} "blog"]]
-      [:li [:a {:href "/profile"} "profile"]]]))
+      [:li [:a {:href "/profile"} "profile"]]
+      [:li [:a {:href "/signup"} "signup"]]]))
 
 (defn common-body [right-body]
   (list

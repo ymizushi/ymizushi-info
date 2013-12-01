@@ -11,8 +11,8 @@
 (defentity tags)
 (defentity blogs)
 
-(defn sel [symbol]
-  (select symbol))
+(defmacro sel [symbol & ext]
+  `(select ~symbol ~@ext))
 
-(defn ins [table values-dict]
-  (insert table (values values-dict)))
+(defn ins [table values-dict & ext]
+  `(insert ~table (values ~values-dict) ~@ext))

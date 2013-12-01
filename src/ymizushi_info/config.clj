@@ -26,4 +26,3 @@
     (if (and db user password)
       {:db db :user user :password password}
       {:db "ymizushi" :user "ymizushi" :password ""})))
-
