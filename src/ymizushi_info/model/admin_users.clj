@@ -1,9 +1,9 @@
 (ns ymizushi-info.model.admin-users
   (:require [ymizushi-info.db :refer [sel ins]]))
 
-(defn create [values]
-  (if (sel "admin_users") (ins "admin_users" values)))
+(defn create [values & ext]
+  (ins "admin_users" values ext))
 
-(defn gets [table values]
-  (sel "admin_users"))
+(defn gets [values & ext]
+  (sel "admin_users" ext))
 

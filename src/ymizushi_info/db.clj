@@ -14,5 +14,5 @@
 (defmacro sel [symbol & ext]
   `(select ~symbol ~@ext))
 
-(defn ins [table values-dict & ext]
-  `(insert ~table (values ~values-dict) ~@ext))
+(defmacro ins [table & ext]
+  `(insert ~table ~@ext))
