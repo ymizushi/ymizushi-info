@@ -3,7 +3,8 @@
   :url "http://ymizushi.info"
   :license {:name "Yuta Mizushima"
             :url "http://ymizushi.info"}
-  :dependencies [[org.clojure/clojure "1.4.0"]
+  :dependencies [[org.clojure/clojure "1.5.0"]
+                 [org.clojure/tools.logging "0.2.6"]
                  [compojure "1.1.1"]
                  [ring/ring-jetty-adapter "1.1.0"]
                  [ring/ring-devel "1.1.0"]

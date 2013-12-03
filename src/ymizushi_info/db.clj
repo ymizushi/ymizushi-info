@@ -3,8 +3,7 @@
             [korma.db :refer [defdb postgres]]
             [korma.core :refer [defentity select insert values]]))
 
-(defdb db
-  (postgres config/db))
+(defdb db (postgres config/db))
 
 (defentity admin_users)
 (defentity comments)
