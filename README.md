@@ -8,33 +8,62 @@ http://ymizushi.info
 The website about ymizushi using clojure/compojure.
 
 ## Purpose
-Making famous with ymizushi.
+Profile site about ymizushi.
 
 ## Requirements
-- clojure 1.4 or later.
-- compojure 1.1 or later.
-- hiccup 1.0 or later.
+- leiningen 2.0 or later.
+
 These requirements are automatically installed by leiningen.
 
 ## Install
 1. Mac OS X
  
  ```sh
-$brew install clojure
-$brew install leiningen
+brew install curl
+brew install wget
+brew install clojure
+brew install leiningen
+brew install postgres
+brew install rlwrap
+```
+
+## Initialize
+
+ ```sh
+initdb pg
+postgres -D pg &
+createdb ymizushi
+
+export DATABASE_URL=postgresql://localhost:5432/ymizushi
+export session_secret=hogehoge
+lein run -m ymizushi-info.manage
+```
+
+# Postgres commands
+ ```sh
+psql minosound
+postgres=> \d
 ```
 
 ## Usage
 
  ```sh
-$ lein run -m ymizushi-info.web
+lein ring server
 ```
 
-## start slime server
+## Unit test
 
  ```sh
-$ lein swank
+lein test
 ```
+
+## Coverage
+
+ ```sh
+lein cloverage
+```
+
+Output files are located in ./target/coverage/ and open index.html.
 
 ## License
 Copyright © 2013 ymizushi
