@@ -8,9 +8,9 @@
   "return <int>age from <int>era"
   (- (.. (Calendar/getInstance) (get (Calendar/YEAR))) era))
 
-(def ymizushi (struct profile
-    ["趣味"  "プログラミング、ジャグリング、音楽制作"]
-    ["興味" "世の中の仕組みに興味があります"]
-    ["年齢" (age 1985)]
-    ))
+(def ymizushi
+  (struct profile
+    ["Job"  "Software Engineer at DWANCO co., Ltd."]
+    ["Interest" "Do it youself. LISP"]
+    ["Age" (age 1985)]))
 

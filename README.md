@@ -31,9 +31,9 @@ brew install rlwrap
 
  ```sh
 initdb pg
-postgres -D pg &
 createdb ymizushi
 
+postgres -D pg &
 export DATABASE_URL=postgresql://localhost:5432/ymizushi
 export session_secret=hogehoge
 lein run -m ymizushi-info.manage
@@ -41,7 +41,7 @@ lein run -m ymizushi-info.manage
 
 # Postgres commands
  ```sh
-psql minosound
+psql ymizushi
 postgres=> \d
 ```
 

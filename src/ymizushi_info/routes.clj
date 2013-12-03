@@ -8,7 +8,7 @@
 (defroutes app
   (route/resources "/")
   (GET "/" [params] (render `root/index params))
-  (GET "/profile" [params] (render `profile/index params))
+  (GET "/profile" [params] (control `profile/index params))
   (GET "/history" [params] (render `history/index params))
   (GET "/downloads" [params] (render `downloads/index params))
   (GET "/blog" [params] (control `blog/index params))

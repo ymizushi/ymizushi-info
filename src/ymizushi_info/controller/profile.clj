@@ -1,7 +1,8 @@
 (ns ymizushi-info.controller.profile
-  (:use
-    [ymizushi-info.model.profile :only (ymizushi)]
-    [ymizushi-info.view.profile :only (index)]))
+  (:require [ymizushi-info.db :refer [sel ins]]
+            [clojure.tools.logging :refer (info error)]
+            [ymizushi-info.model.profile :refer [ymizushi]]
+            [ymizushi-info.renderer :refer [render]]))
 
-(defn action [x]
-  (index {:profile ymizushi}))
+(defn index [params]
+  (render `profile/index {:profile ymizushi}))
