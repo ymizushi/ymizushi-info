@@ -1,4 +1,4 @@
-(ns ymizushi-info.view.common
+(ns ymizushi-info.view
   (:use
     [hiccup.core]
     [hiccup.page]))

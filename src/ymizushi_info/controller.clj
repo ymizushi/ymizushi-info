@@ -4,7 +4,10 @@
             [ymizushi-info.controller.signup]
             [ymizushi-info.controller.profile]))
 
-(defn control [action param]
-  (eval
-    (list
-      (symbol (str "ymizushi-info.controller." (namespace action)) (name action)) param)))
+(def prefix "ymizushi-info.controller.")
+
+(defn make-symbol [action]
+  (symbol (str prefix (namespace action)) (name action)))
+
+(defmacro control [action param]
+  `(~(make-symbol action) ~param))

@@ -1,6 +1,6 @@
 (ns ymizushi-info.view.blog
   (:require [hiccup.core :refer :all]
-            [ymizushi-info.view.common :refer :all]))
+            [ymizushi-info.view :refer :all]))
 
 (defn blog-render [blogs]
     (for [blog blogs] 

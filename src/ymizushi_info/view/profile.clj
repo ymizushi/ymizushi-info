@@ -1,7 +1,7 @@
 (ns ymizushi-info.view.profile
   (:use
     [hiccup.core]
-    [ymizushi-info.view.common]))
+    [ymizushi-info.view]))
 
 (defn sp-body [params]
   (list (table-render (:profile params)))) 

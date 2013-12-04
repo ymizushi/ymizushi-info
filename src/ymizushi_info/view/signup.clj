@@ -1,6 +1,6 @@
 (ns ymizushi-info.view.signup
   (:require [hiccup.core :refer :all]
-            [ymizushi-info.view.common :refer :all]
+            [ymizushi-info.view :refer :all]
             [hiccup.form :refer :all]))
 
 (defn signup-form [] 

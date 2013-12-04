@@ -12,4 +12,4 @@
       (error sqle "There was an error in calculation"))))
 
 (defn index [params]
-  (render `blog/index {:blogs (get-blogs)}))
+  (render blog/index {:blogs (get-blogs)}))

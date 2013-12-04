@@ -1,7 +1,7 @@
 (ns ymizushi-info.view.root
   (:use
     [hiccup.core]
-    [ymizushi-info.view.common]))
+    [ymizushi-info.view]))
 
 (defn sp-body [params]
   (list [:p "ymizushiの個人サイトです"]

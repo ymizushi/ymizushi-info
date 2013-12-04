@@ -5,4 +5,4 @@
             [ymizushi-info.renderer :refer [render]]))
 
 (defn index [params]
-  (render `profile/index {:profile ymizushi}))
+  (render profile/index {:profile ymizushi}))
