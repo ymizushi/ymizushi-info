@@ -4,12 +4,19 @@
             [ymizushi-info.renderer :refer [render]]))
 
 (defn get-blogs []
-  ;(ins "blogs" {:title "hoge" :description "hogehoge"})
   (try
-    (info `blogs)
-    (sel `blogs)
+    (sel "blogs")
+    (catch Exception sqle
+      (error sqle "There was an error in calculation"))))
+
+(defn post-blog [params]
+  (try
+    (ins "blogs" {:title (:title params) :description (:description params)})
     (catch Exception sqle
       (error sqle "There was an error in calculation"))))
 
 (defn index [params]
   (render blog/index {:blogs (get-blogs)}))
+
+(defn post [params]
+  (render blog/index {:result (post-blog params)}))

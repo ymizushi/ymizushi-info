@@ -1,9 +1,10 @@
 (ns ymizushi-info.model.admin-users
-  (:require [ymizushi-info.db :refer [sel ins]]))
+  (:require [ymizushi-info.db :refer [sel ins]]
+            [korma.core :refer [defentity select insert values]]
+            ))
 
-(defn create [values & ext]
-  (ins "admin_users" values ext))
+(defn create [values]
+  (ins "admin_users" values))
 
-(defn gets [values & ext]
-  (sel "admin_users" ext))
-
+(defn gets [& values]
+  (sel "admin_users"))

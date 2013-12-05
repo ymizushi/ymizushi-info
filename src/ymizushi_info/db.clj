@@ -10,8 +10,8 @@
 (defentity tags)
 (defentity blogs)
 
-(defmacro sel [symbol & ext]
-  `(select ~symbol ~@ext))
+(defn sel [symbol & ext]
+  (select symbol))
 
-(defmacro ins [table & ext]
-  `(insert ~table ~@ext))
+(defn ins [table value]
+  (insert table (values [value])))

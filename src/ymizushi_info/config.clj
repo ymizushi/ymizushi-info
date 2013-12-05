@@ -7,7 +7,7 @@
   (Integer. (or port (shell-env :port) 8080)))
 
 (def session-secret 
-  (if-let [session-secret (shell-env :session-secret)]
+  (if-let [session-secret (or (shell-env :session-secret) "hoge")]
     session-secret
     (throw (Exception. "session-secret is not set"))))
 
