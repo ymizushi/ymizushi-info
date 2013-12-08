@@ -1,5 +1,5 @@
 LOCAL_PATH = ./target
-TARGET_FILE = root.war
+TARGET_FILE = ymizushi.war
 
 REMOTE_USER=ymizushi
 REMOTE_HOST=ymizushi.info
@@ -11,7 +11,7 @@ default:
 	@echo " make scp"
 
 war:
-	lein ring uberwar root.war
+	lein ring uberwar $(TARGET_FILE)
 
 restart:
 	ssh -t $(REMOTE_USER)@$(REMOTE_HOST) 'sudo service jetty restart'

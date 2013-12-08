@@ -1,3 +1,4 @@
+.DS_Store
 pom.xml
 *jar
 /classes/
@@ -9,3 +10,5 @@ pom.xml
 /target
 /pg
 .lein-repl-history
+benchmark/results
+*.pyc

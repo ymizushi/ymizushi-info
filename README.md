@@ -63,6 +63,16 @@ lein test
 lein cloverage
 ```
 
+## Banchmarking
+
+ ```sh
+pip install numpy
+pip install matplotlib
+pip -U multi-mechanize
+multimech-run benchmark
+```
+
+
 Output files are located in ./target/coverage/ and open index.html.
 
 ## License
