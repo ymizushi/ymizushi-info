@@ -1,6 +1,5 @@
 (ns ymizushi-info.auth
-  (:require
-    [org.clojars.tnoda.simple-crypto :as simple-crypto]))
+  (:require [org.clojars.tnoda.simple-crypto :as simple-crypto]))
 
 (defn encrypt [secret-message secret-key]
   (simple-crypto/encrypt secret-message secret-key))

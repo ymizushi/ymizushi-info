@@ -1,7 +1,7 @@
 (ns ymizushi-info.view
-  (:use
-    [hiccup.core]
-    [hiccup.page]))
+  (:require
+    [hiccup.core :refer :all]
+    [hiccup.page :refer :all]))
 
 (defn head []
   [:head
@@ -16,10 +16,11 @@
 (defn left-body []
   (list
     [:ul {:class "nav"}
-      [:li [:a {:href "/"} "info"]]
-      [:li [:a {:href "/blog"} "blog"]]
+      ;[:li [:a {:href "/"} "info"]]
+      ;[:li [:a {:href "/blog"} "blog"]]
       [:li [:a {:href "/profile"} "profile"]]
-      [:li [:a {:href "/signup"} "signup"]]]))
+      ;[:li [:a {:href "/signup"} "signup"]]
+     ]))
 
 (defn common-body [right-body]
   (list
