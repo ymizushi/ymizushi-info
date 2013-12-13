@@ -13,4 +13,3 @@
       (is
         expected
         (table-render arg)))))
-
