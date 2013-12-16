@@ -16,10 +16,10 @@
 (defn left-body []
   (list
     [:ul {:class "nav"}
-      ;[:li [:a {:href "/"} "info"]]
-      ;[:li [:a {:href "/blog"} "blog"]]
+      [:li [:a {:href "/"} "info"]]
+      [:li [:a {:href "/blog"} "blog"]]
       [:li [:a {:href "/profile"} "profile"]]
-      ;[:li [:a {:href "/signup"} "signup"]]
+      [:li [:a {:href "/signup"} "signup"]]
      ]))
 
 (defn common-body [right-body]
@@ -36,7 +36,6 @@
       right-body
       [:center [:b "powered by clojure"]]]
       [:center [:b "2013 ymizushi"]])) 
-
 
 (defn table-render [m]
   [:table {:class "table"}
