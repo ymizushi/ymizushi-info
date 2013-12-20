@@ -1,6 +1,6 @@
 (ns kongo.renderer)
 
-(def prefix "ymizushi-info.view.")
+(def prefix "kongo.view.")
 
 (defn make-symbol [view]
   (symbol (str prefix (namespace view)) (name view)))

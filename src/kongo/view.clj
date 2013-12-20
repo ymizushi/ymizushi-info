@@ -1,4 +1,4 @@
-(ns ymizushi-info.view
+(ns kongo.view
   (:require
     [hiccup.core :refer :all]
     [hiccup.page :refer :all]))
