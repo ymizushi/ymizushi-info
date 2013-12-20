@@ -1,7 +1,7 @@
 (ns ymizushi-info.manage
   (:require
     [ymizushi-info.config :as config]
-    [clojure.java.jdbc :as sql]))
+    [kongo.manage :refer sql]))
 
 (defn create-admin-users []
   (sql/create-table :admin_users
