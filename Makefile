@@ -1,5 +1,5 @@
 LOCAL_PATH = ./target
-TARGET_FILE = ymizushi.war
+TARGET_FILE = root.war
 
 REMOTE_USER=ymizushi
 REMOTE_HOST=ymizushi.info
