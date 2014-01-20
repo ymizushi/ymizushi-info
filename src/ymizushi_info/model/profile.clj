@@ -10,7 +10,7 @@
 
 (def ymizushi
   (struct profile
-    ["Job"  "Software Engineer at DWANCO co., Ltd."]
-    ["Interest" "Do it youself. LISP"]
+    ["Job"  "Software Engineer."]
+    ["Interest" "Do it yourself."]
     ["Age" (age 1985)]))
 
