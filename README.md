@@ -15,7 +15,7 @@ These requirements are automatically installed by leiningen.
 ## Install
 1. Mac OS X
  
- ```sh
+```sh
 brew install curl
 brew install wget
 brew install clojure
@@ -26,7 +26,7 @@ brew install rlwrap
 
 ## Initialize
 
- ```sh
+```sh
 initdb pg
 createdb ymizushi
 
@@ -37,32 +37,32 @@ lein run -m ymizushi-info.manage
 ```
 
 ## Postgres commands
- ```sh
+```sh
 psql ymizushi
 postgres=> \d
 ```
 
 ## Usage
 
- ```sh
+```sh
 lein ring server
 ```
 
 ## Unit test
 
- ```sh
+```sh
 lein test
 ```
 
 ## Coverage
 
- ```sh
+```sh
 lein cloverage
 ```
 
 ## Benchmarking
 
- ```sh
+```sh
 pip install numpy
 pip install matplotlib
 pip -U multi-mechanize
