@@ -7,9 +7,6 @@ http://ymizushi.info
 
 The website about ymizushi using clojure/compojure.
 
-## Purpose
-Profile site about ymizushi.
-
 ## Requirements
 - leiningen 2.0 or later.
 
@@ -39,7 +36,7 @@ export session_secret=hogehoge
 lein run -m ymizushi-info.manage
 ```
 
-# Postgres commands
+## Postgres commands
  ```sh
 psql ymizushi
 postgres=> \d
@@ -63,7 +60,7 @@ lein test
 lein cloverage
 ```
 
-## Banchmarking
+## Benchmarking
 
  ```sh
 pip install numpy
